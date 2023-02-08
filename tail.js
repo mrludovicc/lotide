@@ -1,4 +1,5 @@
 // FUNCTION IMPLEMENTATION
+// example of console.assert
 const assertEqual = function (actual, expected) {
   if (expected !== actual) {
     console.log(`🛑🛑🛑 Assertion Failed: ${actual} !== ${expected}`);
