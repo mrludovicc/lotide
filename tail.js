@@ -1,23 +1,5 @@
-// FUNCTION IMPLEMENTATION
-// example of console.assert
-const assertEqual = function (actual, expected) {
-  if (expected !== actual) {
-    console.log(`🛑🛑🛑 Assertion Failed: ${actual} !== ${expected}`);
-  } else {
-    console.log(`✅✅✅ Assertion Passed: ${actual} === ${expected}`);
-  }
-};
-
-// TEST CODE
-assertEqual("Lighthouse Labs", "Bootcamp");
-assertEqual(1, 1);
-
-// Tail function
-
 const tail = function (arr) {
-  let result = arr.slice(1);
-  return result;
+  const array = arr.slice(1, arr.length);
+  return array;
 };
-const words = ["Yo Yo", "Lighthouse", "Labs"];
-tail(words);
-assertEqual(words.length, 3);
+module.exports = tail;
