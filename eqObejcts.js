@@ -51,32 +51,44 @@ const eqArrays = (arr1, arr2) => {
     }
   } return statement;
 };
-const assertEqual = function(actual, expected) {
+const assertEqual = function (actual, expected) {
   if (expected !== actual) {
     console.log(`🛑🛑🛑 Assertion Failed: ${actual} !== ${expected}`);
   } else {
     console.log(`✅✅✅ Assertion Passed: ${actual} === ${expected}`);
   }
 };
-const eqObjects = function(object1, object2) {
-  let counter = [];
+const eqObjects = function (object1, object2) {
+  //let counter = [];
   //console.log(Object.keys(object1).length)
+  // if (Object.keys(object1).length !== Object.keys(object2).length) {
+  //   return false;
+  // } else {
+  //   for (let key in object1) {
+  //     if (Array.isArray(object1[key]) && Array.isArray(object2[key])) {
+  //       if (!eqArrays(object1[key], object2[key])) return false;
+  //     } else if (object1[key] === object2[key]) {
+  //       counter.push(true);
+  //     } else {
+  //       return false;
+  //     }
+  //   }
+  // } if (counter.length === Object.keys(object1).length) {
+  //   return true;
+  // }
+
   if (Object.keys(object1).length !== Object.keys(object2).length) {
     return false;
   } else {
     for (let key in object1) {
       if (Array.isArray(object1[key]) && Array.isArray(object2[key])) {
         if (!eqArrays(object1[key], object2[key])) return false;
-      } else if (object1[key] === object2[key]) {
-        counter.push(true);
-      } else {
+      } else if (object1[key] !== object2[key]) {
         return false;
       }
     }
-  } if (counter.length === Object.keys(object1).length) {
-    return true;
   }
-
+  return true;
 };
 
 
